@@ -67,4 +67,4 @@ class FavoritePost(models.Model):
         unique_together = ("user", "post")
 
     def __str__(self):
-        return f"{self.user.username} favorited {self.post.title}"
+        return f"{self.user.username} favorited {self.post}"
