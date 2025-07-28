@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "user_profile",
     "locations",
     "posts",
+    "report",
 ]
 
 MIDDLEWARE = [
