@@ -10,7 +10,10 @@ class UserProfile(AbstractUser):
     username = models.CharField("Username", max_length=150, unique=True, db_index=True)
     email = models.EmailField("Email", unique=True, db_index=True)
     date_joined = models.DateTimeField(auto_now_add=True)
-    first_name = models.CharField("First Name", max_length=30, blank=True)
+    first_name = models.CharField(
+        "First Name",
+        max_length=30,
+    )
     last_name = models.CharField("Last Name", max_length=30, blank=True)
     full_name = models.CharField("Full Name", max_length=60, blank=True)
 
