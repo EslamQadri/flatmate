@@ -26,7 +26,7 @@ jobs:
 
       - name: Set environment variables
         run: |
-          echo "DJANGO_SETTINGS_MODULE=flatmate .settings" >> $GITHUB_ENV
+          echo "DJANGO_SETTINGS_MODULE=flatmate.settings" >> $GITHUB_ENV
           echo "SECRET_KEY=testing-secret" >> $GITHUB_ENV
           echo "DEBUG=0" >> $GITHUB_ENV
 
