@@ -36,4 +36,4 @@ class Area(models.Model):
     city = models.ForeignKey(City, related_name="areas", on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.name}, {self.city.name}"
+        return f"{self.name}, {self.city.city_name_en}"
