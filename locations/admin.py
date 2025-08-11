@@ -1,19 +1,27 @@
 from django.contrib import admin
-from locations.models import Country, City, Area
+from locations.models import Country, City, Area, Governorate
 
 
-# Register your models here.
 @admin.register(Country)
 class CountryAdmin(admin.ModelAdmin):
-    list_display = ("name", "code")
+    list_display = ("id", "name", "code")
     search_fields = ("name", "code")
+
+
+@admin.register(Governorate)
+class GovernorateAdmin(admin.ModelAdmin):
+    list_display = ("id", "governorate_name_ar", "governorate_name_en")
 
 
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
-    list_display = ("name", "country")
-    search_fields = ("name", "country__name")
-    list_filter = ("country",)
+    list_display = ("id", "name", "governorate")
+    search_fields = (
+        "name",
+        "governorate__governorate_name_en",
+        "governorate__governorate_name_ar",
+    )
+    list_filter = ("governorate",)
 
 
 @admin.register(Area)

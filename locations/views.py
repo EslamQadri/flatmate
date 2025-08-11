@@ -1,3 +1,2 @@
-from django.shortcuts import render
+from locations.models import City, Country, Area
 
-# Create your views here.

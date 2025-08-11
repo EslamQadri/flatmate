@@ -1,4 +1,4 @@
-name: Django CI (SQLite)
+name: Django Work Flow
 
 on:
   push:
