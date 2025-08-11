@@ -21,13 +21,14 @@ class Governorate(models.Model):
 
 
 class City(models.Model):
-    name = models.CharField(max_length=100)
+    city_name_ar = models.CharField(max_length=100, null=True, blank=True)
+    city_name_en = models.CharField(max_length=100)
     governorate = models.ForeignKey(
         Governorate, related_name="cities", on_delete=models.CASCADE
     )
 
     def __str__(self):
-        return f"{self.name}, {self.governorate.governorate_name_en}"
+        return f"{self.city_name_en}, {self.governorate.governorate_name_en}"
 
 
 class Area(models.Model):

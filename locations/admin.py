@@ -15,10 +15,10 @@ class GovernorateAdmin(admin.ModelAdmin):
 
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "governorate")
+    list_display = ("id", "city_name_en", "city_name_ar", "governorate")
     search_fields = (
-        "name",
-        "governorate__governorate_name_en",
+        "city_name_en",
+        "city_name_ar" "governorate__governorate_name_en",
         "governorate__governorate_name_ar",
     )
     list_filter = ("governorate",)
@@ -26,8 +26,8 @@ class CityAdmin(admin.ModelAdmin):
 
 @admin.register(Area)
 class AreaAdmin(admin.ModelAdmin):
-    list_display = ("name", "city")
-    search_fields = ("name", "city__name")
+    list_display = ("name", "city__city_name_en")
+    search_fields = ("name", "city__city_name_en")
     list_filter = ("city",)
     ordering = ("city", "name")
     prepopulated_fields = {"name": ("city",)}
